@@ -126,6 +126,10 @@ a.text-danger:hover {
   background-color: #353535 !important;
 }
 
+.bg-footer-custom{
+  background-color: #14080E !important;
+}
+
 .text-dark {
   color: #353535 !important;
 }
@@ -155,6 +159,14 @@ a.text-muted:hover {
 }
 
 a.text-custom:hover {
+  color: #414aeb !important;
+}
+
+.text-black {
+  color: #24ffe2 !important;
+}
+
+a.text-black:hover {
   color: #414aeb !important;
 }
 
@@ -238,7 +250,7 @@ p {
 }
 
 .bg-overlay {
-  background-color: #DAD2D8;
+  background-color: rgba(35, 37, 47, 0.8);
   position: absolute;
   top: 0;
   right: 0;
@@ -1285,24 +1297,34 @@ button:not(:disabled) {
   width: 12.5rem;
 }
 .team-profile {
-  filter: grayscale(100%);
+  
   transition: filter 0.5s ease;
+  transition: transform .2s;
+
 }
 
 .team-profile:hover {
   filter: none;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 0.75rem rgb(247, 157, 175));
 }
 
 .team-project {
   /* filter: blur(3px); */
-  filter: grayscale(100%);
+  filter: none;
   transition: filter 0.5s ease;
   border-radius: 10px;
   border: 3px black;
+  -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .team-project:hover {
-  filter: none;
+  filter: grayscale(100%);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 @keyframes noise-anim {
@@ -1404,4 +1426,72 @@ button:not(:disabled) {
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
-}/*# sourceMappingURL=style.css.map */
+}
+
+
+
+.hover03 figure img {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.hover03 figure:hover img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.column {
+}
+
+.column:last-child {
+  padding-bottom: 60px;
+}
+
+.column::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.column div {
+  position: relative;
+}
+
+.column div:first-child {
+  margin-left: 0;
+}
+
+.column div span {
+  position: absolute;
+  bottom: -20px;
+  z-index: -1;
+  display: block;
+  color: #444;
+  font-size: 18px;
+  text-decoration: none;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+
+figure {
+  overflow: hidden;
+}
+
+figure:hover+span {
+  bottom: -36px;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/*# sourceMappingURL=style.css.map */

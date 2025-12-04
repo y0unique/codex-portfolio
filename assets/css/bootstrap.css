@@ -7423,9 +7423,17 @@
      background-color: #f8f9fa !important
  }
 
-  .bg-dust {
-      background-color: #DAD2D8 !important
-  }
+.bg-dust {
+    background-color: #DAD2D8 !important
+}
+
+.bg-custom1 {
+    background-color: #fff0f0 !important
+}
+
+.bg-porcelain {
+    background-color: #fdfdfd !important
+}
 
  a.bg-light:focus,
  a.bg-light:hover,
