@@ -1,15 +1,12 @@
-FROM php:8.2-apache
+# Use the official Apache image
+FROM httpd:2.4
 
-# Enable PostgreSQL extensions
-RUN docker-php-ext-install pdo pdo_pgsql pgsql
+# Copy your HTML and assets into Apache's web root
+COPY ./ /usr/local/apache2/htdocs/
 
-# Copy your PHP app
-COPY . /var/www/html/
-
-# Render uses port 10000
+# Expose Render's port
 ENV PORT=10000
 EXPOSE 10000
 
-# Update Apache to use Render port
-RUN sed -i 's/80/10000/g' /etc/apache2/ports.conf \
- && sed -i 's/:80/:10000/g' /etc/apache2/sites-available/000-default.conf
+# Optional: set Apache to listen on Render's port
+RUN sed -i 's/Listen 80/Listen 10000/' /usr/local/apache2/conf/httpd.conf
